@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg: #001E2B;
+    --border: #3D4F58;
+    --bg2: #112733;
+}
+
+body{
+    background-color: var(--bg);
+    color: #E8EDEB;
+    font-family: Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: inherit;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, p, section{
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    width: fit-content;
+    background-color: var(--bg2);
+}
+
+
+.me{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.me__section {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+}
+
+.me__avatar{
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1; 
+    border: 2px solid var(--border);
+}
+
+.me__section .icon {
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.me__subtitle{
+    margin-top: 2px;
+}
+
+.page-actions {
+    display: flex;
+    position: absolute;
+    right: 0;
+    gap: 10px;
+    align-items: end;
+
+}
+
+button {
+    background: #20292e;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 5px;
+    aspect-ratio: 1 / 1; 
+
+}
+button:hover {
+    background: #3D4F58;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.about{
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 40%;
+}
+.about p{
+    padding: 5px;
+}
+.about__heading{
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+}
+
+
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin-bottom: 0px;
+}
+
+.skills__icon--html:hover{
+    stroke: #e34f27;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.skills__icon--css:hover, .skills__icon--ts:hover{
+    stroke: #3576c3;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.skills__icon--js:hover, .skills__icon--python:hover{
+    stroke: #f6e01c;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.skills__icon--react:hover{
+    stroke: #60dafa;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}   
+
+
+.skills__icon--mysql:hover{
+    stroke: #04738c;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.skills__icon--mongo:hover{
+    stroke: #01ed65;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.projects{
+    border: none;
+    background-color: var(--bg);
+    width: 40%;
+}
+.projects__item{
+
+    padding-top: 10px;
+    width: 420px; /* container width preserved */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.projects__img{
+    width: 96px; /* coin size preserved */
+    height: 96px;
+    display: block;
+    transition: transform 0.18s ease-in-out;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.projects__item:hover .projects__img{
+    transform: translateX(-60px) scale(1.05);
+}
+
+.projects__description {
+    position: relative;
+    flex: 1; 
+    padding: 14px 16px; 
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid #FFD54A; 
+    background-color: rgba(255, 213, 74, 0.514);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(14px);
+    transition: opacity 0.18s ease-in-out, visibility 0.18s ease-in-out, transform 0.18s ease-in-out;
+    text-align: left;
+    line-height: 1.4;
+    font-size: clamp(14px, 1.8vw, 16px);
+}
+
+.projects__item:hover .projects__description {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+/* ----------FOOTER---------- */
+
+footer{
+    text-align: center;
+    
+}
+a{
+    text-decoration: none;
+}
+/* ----------RESPONSIVENESS---------- */
+
