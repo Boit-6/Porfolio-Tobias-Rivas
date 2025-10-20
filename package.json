@@ -1,0 +1,23 @@
+{
+  "name": "porfolio-tobias-rivas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boit-6/Porfolio-Tobias-Rivas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boit-6/Porfolio-Tobias-Rivas/issues"
+  },
+  "homepage": "https://github.com/Boit-6/Porfolio-Tobias-Rivas#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg: #001E2B;
+    --border: #3D4F58;
+    --bg2: #112733;
+}
+
+/* --------------------------------------------------
+   BASE / RESET
+   Reglas globales y variables de tema por defecto
+ -------------------------------------------------- */
+
+body{
+    background-color: var(--bg);
+    color: #E8EDEB;
+    font-family: Inter, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: inherit;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------
+   MODO CLARO (light)
+   - Para activar: añadir la clase `light` al <html>
+   - Sobrescribe variables y algunos estilos específicos
+ -------------------------------------------------- */
+.light {
+    --bg: #F7FAFC;       /* Fondo principal, casi blanco pero cálido */
+    --bg2: #E3E8EE;      /* Fondo de contenedores */
+    --border: #CBD5E1;   /* Bordes suaves */
+    --accent: #CBD5E1;   /* Acento para botones */
+    --accent-hover: #b2bac5; /* Hover para botones */
+    --text: #22223B;     /* Texto en modo claro */
+}
+
+/* Overrides para elementos concretos en modo claro */
+.light body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+.light button {
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--border);
+    transition: background 0.2s;
+}
+.light button:hover {
+    background: var(--accent-hover);
+}
+.light .container {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+}
+.light svg {
+    stroke: var(--text);
+}
+
+
+
+
+/* --------------------------------------------------
+   TIPOGRAFÍA / BLOQUES GENERALES
+ -------------------------------------------------- */
+h1, p, section{
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    width: fit-content;
+    background-color: var(--bg2);
+}
+
+
+/* --------------------------------------------------
+   HEADER / ME (sección personal)
+ -------------------------------------------------- */
+.me{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.me__section {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+}
+
+.me__avatar{
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1; 
+    border: 2px solid var(--border);
+}
+
+.me__section .icon {
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.me__subtitle{
+    margin-top: 2px;
+}
+
+.page-actions {
+    display: flex;
+    position: absolute;
+    right: 0;
+    gap: 10px;
+    align-items: end;
+
+}
+
+/* Botones circulares pequeños usados en header */
+button {
+    background: #20292e;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 5px;
+    aspect-ratio: 1 / 1; 
+
+}
+button:hover {
+    background: #3D4F58;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Contenedor principal */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.about{
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 40%;
+}
+.about p{
+    padding: 5px;
+}
+.about__heading{
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
+}
+
+
+
+.skills{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills__list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin-bottom: 0px;
+}
+
+.skills__icon--html:hover{
+    stroke: #e34f27;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.skills__icon--css:hover, .skills__icon--ts:hover{
+    stroke: #3576c3;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.skills__icon--js:hover, .skills__icon--python:hover{
+    stroke: #f6e01c;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.skills__icon--react:hover{
+    stroke: #60dafa;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}   
+
+
+.skills__icon--mysql:hover{
+    stroke: #04738c;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.skills__icon--mongo:hover{
+    stroke: #01ed65;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.projects{
+    border: none;
+    background-color: var(--bg);
+    width: 40%;
+}
+.projects__item{
+
+    padding-top: 10px;
+    width: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.projects__img{
+    width: 96px;
+    height: 96px;
+    display: block;
+    transition: transform 0.18s ease-in-out;
+    z-index: 2;
+}
+
+.projects__item:hover .projects__img{
+    transform: translateX(-60px) scale(1.05);
+}
+
+.projects__description {
+    position: relative;
+    flex: 1; 
+    padding: 14px 16px; 
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid #FFD54A; 
+    background-color: rgba(255, 213, 74, 0.514);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(14px);
+    transition: opacity 0.18s ease-in-out, visibility 0.18s ease-in-out, transform 0.18s ease-in-out;
+    text-align: left;
+    line-height: 1.4;
+    font-size: clamp(14px, 1.8vw, 16px);
+}
+
+.projects__item:hover .projects__description {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+/* ----------FOOTER---------- */
+
+footer{
+    text-align: center;
+    
+}
+a{
+    text-decoration: none;
+}
+/* ----------RESPONSIVENESS---------- */
+
