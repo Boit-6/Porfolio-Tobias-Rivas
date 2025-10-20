@@ -1,6 +1,3 @@
-// -------------------------
-// Types & Data
-// -------------------------
 type Languages = 'es' | 'en';
 
 interface TextContent {
@@ -39,9 +36,6 @@ const text: Record<Languages, TextContent> = {
 };
 
 
-// -------------------------
-// Helpers: storage + DOM safe helpers
-// -------------------------
 function getLanguage(): Languages {
     const language = localStorage.getItem('language');
     if (language === 'es' || language === 'en') return language;
@@ -53,12 +47,8 @@ function setLanguage(language: Languages) {
 }
 
 
-// -------------------------
-// Main UI initialization
-// - runs on DOMContentLoaded to ensure elements exist
-// -------------------------
 document.addEventListener('DOMContentLoaded', () => {
-    // Element references (with fallbacks)
+
     const aboutEl = document.getElementById('about-heading') || document.querySelector('.about__heading');
     const aboutParagraphEl = document.getElementById('about-paragraph') || document.querySelector('.about p');
     const subtitleEl = document.querySelector('.me__subtitle');
@@ -67,13 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectDescriptionEl = document.querySelector('.projects__description');
     const headerFooter = document.getElementById('header-footer');
 
-    // Utility: set text content safely
     function setText(el: Element | null, value: string) {
         if (!el) return;
         el.textContent = value;
     }
 
-    // Apply translations to page
     function applyLanguage(lang: Languages) {
         setText(aboutEl, text[lang].aboutHeading);
         setText(aboutParagraphEl, text[lang].aboutParagraphEl);
@@ -84,10 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setText(headerFooter, text[lang].headerFooter);
     }
 
-    // Initialize language
     applyLanguage(getLanguage());
 
-    // Language toggle button
     const langButton = document.querySelector('.page-actions__language-button');
     if (langButton) {
         langButton.addEventListener('click', () => {
@@ -98,11 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Theme toggle: select the button by class (BEM) and attach listener here
     const themeButtonEl = document.querySelector('.page-actions__theme-button') as HTMLButtonElement | null;
     const rootEl = document.documentElement;
 
-    // Initialize theme from localStorage
     const storedTheme = localStorage.getItem('theme');
     if (storedTheme === 'dark') {
         rootEl.classList.add('dark');
@@ -112,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         rootEl.classList.remove('dark');
     }
 
-    // Add theme toggle listener (defensive)
     if (themeButtonEl) {
         themeButtonEl.addEventListener('click', () => {
             const current = localStorage.getItem('theme');
