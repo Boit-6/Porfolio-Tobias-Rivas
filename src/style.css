@@ -10,8 +10,8 @@
 }
 
 /* --------------------------------------------------
-   BASE / RESET
-   Reglas globales y variables de tema por defecto
+    BASE / RESET
+    Reglas globales y variables de tema por defecto
  -------------------------------------------------- */
 
 body{
@@ -25,17 +25,17 @@ body{
 }
 
 /* --------------------------------------------------
-   MODO CLARO (light)
-   - Para activar: añadir la clase `light` al <html>
-   - Sobrescribe variables y algunos estilos específicos
+    MODO CLARO (light)
+    - Para activar: añadir la clase `light` al <html>
+    - Sobrescribe variables y algunos estilos específicos
  -------------------------------------------------- */
 .light {
-    --bg: #F7FAFC;       /* Fondo principal, casi blanco pero cálido */
-    --bg2: #E3E8EE;      /* Fondo de contenedores */
-    --border: #CBD5E1;   /* Bordes suaves */
-    --accent: #CBD5E1;   /* Acento para botones */
-    --accent-hover: #b2bac5; /* Hover para botones */
-    --text: #22223B;     /* Texto en modo claro */
+    --bg: #F7FAFC;       
+    --bg2: #E3E8EE;      
+    --border: #CBD5E1;   
+    --accent: #CBD5E1;   
+    --accent-hover: #b2bac5; 
+    --text: #22223B;
 }
 
 /* Overrides para elementos concretos en modo claro */
@@ -64,7 +64,7 @@ body{
 
 
 /* --------------------------------------------------
-   TIPOGRAFÍA / BLOQUES GENERALES
+    TIPOGRAFÍA / BLOQUES GENERALES
  -------------------------------------------------- */
 h1, p, section{
     border: 2px solid var(--border);
@@ -75,13 +75,14 @@ h1, p, section{
 
 
 /* --------------------------------------------------
-   HEADER / ME (sección personal)
+    HEADER / ME (sección personal)
  -------------------------------------------------- */
 .me{
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 16px;
+    margin-top: 25px;
 }
 
 .me__section {
@@ -126,6 +127,8 @@ button {
     cursor: pointer;
     padding: 5px;
     aspect-ratio: 1 / 1; 
+    margin-top: 25px;
+
 
 }
 button:hover {
