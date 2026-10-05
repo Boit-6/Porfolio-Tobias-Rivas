@@ -1,0 +1,4 @@
+node_modules/
+.sc/
+.vercel/
+.env*
