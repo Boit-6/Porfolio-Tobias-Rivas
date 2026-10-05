@@ -56,6 +56,7 @@ interface LanguageText {
     location: string;
     cvButton: string;
     cvFile: string;
+    title: string;
     metaDescription: string;
     aboutHeading: string;
     aboutParagraphEl: string;
@@ -91,6 +92,9 @@ interface LanguageText {
     project1Title: string;
     project1Tag: string;
     project1Description: string;
+    project1Highlight1: string;
+    project1Highlight2: string;
+    project1Highlight3: string;
     project1ImageAlt: string;
     project2Title: string;
     project2Tag: string;
@@ -126,9 +130,10 @@ const text: TextContent = {
         location: 'Mendoza, Argentina',
         cvButton: 'Descargar CV',
         cvFile: 'cv/CV-Tobias-Rivas-ES.pdf',
+        title: 'Tobias Rivas • Desarrollador Full Stack (React, Next.js, NestJS)',
         metaDescription: 'Portfolio de Tobias Rivas, Técnico Universitario en Programación y desarrollador full stack de Mendoza, Argentina.',
         aboutHeading: 'Sobre mí',
-        aboutParagraphEl: 'Técnico Universitario en Programación (UTN) y Técnico en Electrónica. Desarrollo aplicaciones web full stack con React, Next.js, NestJS y PostgreSQL, y automatizo procesos con n8n. Vengo del servicio técnico de hardware, así que resuelvo tanto problemas de software como de equipos y redes. Busco crecer como desarrollador aportando trabajo en equipo, aprendizaje rápido y adaptabilidad.',
+        aboutParagraphEl: 'Técnico Universitario en Programación (UTN) y Técnico en Electrónica. Desarrollo aplicaciones web full stack con React, Next.js, NestJS y PostgreSQL, y automatizo procesos con n8n. Vengo del servicio técnico de hardware, así que resuelvo tanto problemas de software como de equipos y redes. Busco un puesto como desarrollador full stack, remoto o presencial en Mendoza. Disponibilidad inmediata.',
         aboutLanguages: 'Idiomas: Español (nativo) • Inglés (intermedio, B1)',
         skillsHeading: 'Habilidades',
         toolsHeading: 'Herramientas',
@@ -161,6 +166,9 @@ const text: TextContent = {
         project1Title: 'CRM para freelancers',
         project1Tag: 'Trabajo Final • Tecnicatura Universitaria en Programación (UTN)',
         project1Description: 'Plataforma que lleva un pedido de la consulta al cobro sin tareas manuales: propuesta en línea, factura en PDF, pagos protegidos por hitos con Stripe y panel en tiempo real. Empezó como trabajo final en equipo de dos y después la amplié por mi cuenta.',
+        project1Highlight1: 'Pagos con Stripe Connect por hitos: fondos retenidos, liberación automática a los 7 días y webhooks idempotentes con firma verificada.',
+        project1Highlight2: 'Automatización en n8n con 21 webhooks, 9 procesos programados y 314 nodos.',
+        project1Highlight3: '291 casos de prueba de RLS, 240 pruebas de front con Vitest y CI con lint, tipos, build y escaneo de secretos.',
         project1ImageAlt: 'Panel del CRM para freelancers',
         project2Title: 'El Hornero',
         project2Tag: 'Sitio web en producción • Salón de eventos',
@@ -185,9 +193,10 @@ const text: TextContent = {
         location: 'Mendoza, Argentina',
         cvButton: 'Download CV',
         cvFile: 'cv/CV-Tobias-Rivas-EN.pdf',
+        title: 'Tobias Rivas • Full Stack Developer (React, Next.js, NestJS)',
         metaDescription: 'Portfolio of Tobias Rivas, University Programming Technician and full stack developer from Mendoza, Argentina.',
         aboutHeading: 'About Me',
-        aboutParagraphEl: 'University Programming Technician (UTN) and Electronics Technician. I build full stack web applications with React, Next.js, NestJS and PostgreSQL, and automate processes with n8n. I come from hardware technical support, so I solve software problems as well as equipment and network issues. Looking to grow as a developer, bringing teamwork, fast learning and adaptability.',
+        aboutParagraphEl: 'University Programming Technician (UTN) and Electronics Technician. I build full stack web applications with React, Next.js, NestJS and PostgreSQL, and automate processes with n8n. I come from hardware technical support, so I solve software problems as well as equipment and network issues. Looking for a full stack developer role, remote or on-site in Mendoza. Available immediately.',
         aboutLanguages: 'Languages: Spanish (native) • English (intermediate, B1)',
         skillsHeading: 'Skills',
         toolsHeading: 'Tools',
@@ -220,6 +229,9 @@ const text: TextContent = {
         project1Title: 'CRM for freelancers',
         project1Tag: 'Final Project • University Technical Degree in Programming (UTN)',
         project1Description: 'Platform that takes a request from inquiry to payment with no manual tasks: online proposal, PDF invoice, milestone-protected payments with Stripe and a real-time dashboard. It started as a final project in a team of two, and I then extended it on my own.',
+        project1Highlight1: 'Milestone payments with Stripe Connect: funds held, automatic release after 7 days and idempotent webhooks with signature verification.',
+        project1Highlight2: 'n8n automation with 21 webhooks, 9 scheduled processes and 314 nodes.',
+        project1Highlight3: '291 RLS test cases, 240 front-end tests with Vitest, and CI with lint, type checks, build and secret scanning.',
         project1ImageAlt: 'CRM for freelancers dashboard',
         project2Title: 'El Hornero',
         project2Tag: 'Website in production • Event venue',
@@ -346,6 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'project1-title': text[lang].project1Title,
             'project1-tag': text[lang].project1Tag,
             'project1-description': text[lang].project1Description,
+            'project1-highlight1': text[lang].project1Highlight1,
+            'project1-highlight2': text[lang].project1Highlight2,
+            'project1-highlight3': text[lang].project1Highlight3,
             'project1-repo': text[lang].projectRepo,
             'project1-demo': text[lang].projectDemo,
             'project2-title': text[lang].project2Title,
@@ -366,6 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('project2-image')?.setAttribute('alt', text[lang].project2ImageAlt);
         document.getElementById('cv-button')?.setAttribute('href', text[lang].cvFile);
         q<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', text[lang].metaDescription);
+        document.title = text[lang].title;
         root.lang = lang;
         root.classList.remove('i18n-pending');
     }

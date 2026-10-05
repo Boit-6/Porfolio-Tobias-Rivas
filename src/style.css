@@ -307,8 +307,14 @@ button svg {
 .skills__icon--git:hover {
     fill:#f05032;
 }
-.skills__icon--vscode:hover {
-    fill:#007acc;
+.skills__icon--actions:hover {
+    fill:#2088ff;
+}
+.skills__icon--vitest:hover {
+    fill:#6e9f18;
+}
+.skills__icon--stripe:hover {
+    fill:#635bff;
 }
 .skills__icon--postgres:hover {
     fill:#336791;
@@ -388,6 +394,17 @@ button svg {
     font-size:0.9rem;
     color:var(--text);
     opacity:0.9;
+}
+.project-highlights {
+    margin-top:10px;
+    padding-left:18px;
+    line-height:1.5;
+    font-size:0.85rem;
+    color:var(--text);
+    opacity:0.9;
+}
+.project-highlights li + li {
+    margin-top:4px;
 }
 .project-stack {
     font-size:0.85rem;
