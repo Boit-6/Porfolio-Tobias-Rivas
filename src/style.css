@@ -341,6 +341,17 @@ button svg {
     opacity:0.9;
     margin-top:10px;
 }
+.experience__link {
+    display:inline-block;
+    margin-top:8px;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--accent);
+    text-decoration:none;
+}
+.experience__link:hover {
+    text-decoration:underline;
+}
 .projects-container {
     display:grid;
     grid-template-columns:repeat(2,1fr);
